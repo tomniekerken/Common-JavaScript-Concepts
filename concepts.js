@@ -16,4 +16,5 @@ let number = 42
 let bigint = 42n
 let boolean = true
 let undefined
-let symbol = Symbol("my private property");
+let symbol = Symbol("my private property")
+let nullVar = null
