@@ -21,7 +21,19 @@ let undefined
 let symbol = Symbol("my private property")
 let nullVar = null
 
-// ## 4 ## Lexical Environment
+// ## 4 ## (Basic) Mathematical operations
+// These methematical operations do not contain operations done using math object methods
+let x = 1
+let y = 2
+
+let addition = x + y
+let subtraction = x - y
+let multiplication = x * y
+let division = x / y
+let modulus = x % y
+let exponentiation = x ** y
+
+// ## 5 ## Lexical environment
 // Determines where variables work and where they don't
 // Global scope | Variables can be accessed in every scope
 // Local scope | Variables become local for a specific scope, which could be a function
@@ -45,4 +57,8 @@ function localScope() {
 
 localScope()
 
-// ## 5 ## Functions
+// ## 6 ## Function building blocks
+// Functions can also be used as functions expressions, allowing them to be used as variables
+function add(firstInputParam, secondInputParam) {
+    return firstInputParam + secondInputParam
+}
