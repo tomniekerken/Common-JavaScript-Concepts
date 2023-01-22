@@ -59,6 +59,13 @@ localScope()
 
 // ## 6 ## Function building blocks
 // Functions can also be used as functions expressions, allowing them to be used as variables
-function add(firstInputParam, secondInputParam) {
-    return firstInputParam + secondInputParam
+x = "input parameter"
+y = "input parameter"
+
+function basicFunction(x, y) {
+    return console.log(x, y)
+}
+
+const functionExpression = function(x, y) {
+    return console.log(x, y)
 }
