@@ -26,13 +26,23 @@ let nullVar = null
 // Global scope | Variables can be accessed in every scope
 // Local scope | Variables become local for a specific scope, which could be a function
 // Block scope | Variables become local "blocked" to it's braces, does not apply to the 'var' declaration
+// 'var' variables will be hoisted
 let globalVariable = 'global scope'
 
 function localScope() {
+    globalVariable = 'can be used here'
+
     let localVariable = 'local scope'
 
     if (true) {
+        globalVariable = 'can be used here aswell'
+        localVariable = 'can also be used here'
+
         let blockVariable = 'block scope'
-        console.log(localVariable)
+        var hoistedVariable = 'block scope, but will be hoisted to the local scope'
     }
 }
+
+localScope()
+
+// ## 5 ## Functions
