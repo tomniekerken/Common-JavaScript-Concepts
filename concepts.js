@@ -59,13 +59,29 @@ localScope()
 
 // ## 6 ## Function building blocks
 // Functions can also be used as functions expressions, allowing them to be used as variables
-x = "input parameter"
-y = "input parameter"
+// Higher-order functions use functions as an argument or a return value
+// Functions can also be nested to create a closure
+x = 1
+y = 2
 
-function basicFunction(x, y) {
-    return console.log(x, y)
+function standardFunction(x, y) {
+    return x + y
 }
 
 const functionExpression = function(x, y) {
-    return console.log(x, y)
+    return x + y
 }
+
+// This is a higher-order function because it takes a function as an argument
+// and it returns a function as a result
+// the returned function is also a closure since it has access to the multiplier variable
+// higher-order makes the code more reusable
+function higherOrder(multiplier) {
+    return function(number) {
+        return number * multiplier
+    }
+}
+let double = higherOrder(2)
+console.log(double(5)) // Output: 10
+let triple = higherOrder(3)
+console.log(triple(5)) // Output: 15
