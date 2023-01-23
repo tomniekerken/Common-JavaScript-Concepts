@@ -25,6 +25,7 @@ const constVariable = "value"
 // #
 // #
 // A primitive data type is a classification of data that dictates the type of value it can represent and the operations that can be performed on it.
+// primitive arguments are passed by value, which means a copy is created of the original variable
 let string = "Hello World"
 let number = 42
 let bigint = 42n
@@ -96,6 +97,10 @@ const functionExpression = function(x, y) {
     return x + y
 }
 
+const arrowFunction = () => {
+    return x + y
+}
+
 // This is a higher-order function because it takes a function as an argument
 // and it returns a function as a result
 // The returned function is also a closure since it has access to the multiplier variable
@@ -113,3 +118,43 @@ console.log(double(5)) // Output: 10
 
 let triple = higherOrder(3)
 console.log(triple(5)) // Output: 15
+
+// #
+// #
+// 7 wtf is -> this
+// #
+// #
+// 'This' is a keyword that references an object based on how a function is called
+function wtfIsThis() {
+    console.log(this) // references the global/window object
+}
+
+const person = {
+    wtfIsThis: function () {
+        console.log(this) // this will be a reference to that object
+    }
+}
+person.wtfIsThis()
+person.wtfIsThis.call(person)
+const wtf = person.wtfIsThis.bind(person)
+wtf()
+
+const arrowPerson = {
+    wtfIsThis: () => {
+        console.log(this)
+    }
+}
+
+// #
+// #
+// 8 Objects
+// #
+// #
+// Objects are passed by reference (stored in the heap memory), that means multiple parts of the code might be mutating the same object
+const obj = { a: 1 } // will change to 2 after function is called
+
+// changes the original object 'obj'
+function changeReferencedObject(obj) {
+    obj.a = 2
+}
+changeReferencedObject(obj) // will change initial 'obj.a' to 2
