@@ -35,7 +35,7 @@ let nullVar = null
 
 // #
 // #
-// 4  (Basic) Mathematical operations
+// 4 (Basic) Mathematical operations
 // #
 // #
 // These methematical operations do not contain operations done using math object methods
@@ -51,7 +51,7 @@ let exponentiation = x ** y
 
 // #
 // #
-// 5  Lexical environment
+// 5 Lexical environment
 // #
 // #
 // Determines where variables work and where they don't
@@ -77,7 +77,11 @@ function localScope() {
 
 localScope()
 
-// ## 6 ## Function building blocks
+// #
+// #
+// 6 Function building blocks
+// #
+// #
 // Functions can also be used as functions expressions, allowing them to be used as variables
 // Higher-order functions use functions as an argument or a return value
 // Functions can also be nested to create a closure
