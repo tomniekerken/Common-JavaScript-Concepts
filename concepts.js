@@ -152,9 +152,16 @@ const arrowPerson = {
 // #
 // Objects are passed by reference (stored in the heap memory), that means multiple parts of the code might be mutating the same object
 const obj = { a: 1 } // will change to 2 after function is called
+const initialNumber = 1 // will stay the same
 
 // changes the original object 'obj'
 function changeReferencedObject(obj) {
     obj.a = 2
 }
 changeReferencedObject(obj) // will change initial 'obj.a' to 2
+
+// uses the 'initialNumber' but it's original variable stays the same since JavaScript passes a copy of primitive arguments
+function changeInitialNumber(number) {
+    number = 2
+}
+changeInitialNumber(initialNumber) // creates a copy of primitive argument 'initialNumber' and it's variable value will stay the same
