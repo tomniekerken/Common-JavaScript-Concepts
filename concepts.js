@@ -151,8 +151,8 @@ const arrowPerson = {
 // #
 // #
 // Objects are passed by reference (stored in the heap memory), that means multiple parts of the code might be mutating the same object
-const obj = { a: 1 } // will change to 2 after function is called
-const initialNumber = 1 // will stay the same
+const obj = { a: 1 }
+const initialNumber = 1
 
 // changes the original object 'obj'
 function changeReferencedObject(obj) {
@@ -165,3 +165,5 @@ function changeInitialNumber(number) {
     number = 2
 }
 changeInitialNumber(initialNumber) // creates a copy of primitive argument 'initialNumber' and it's variable value will stay the same
+
+// Object.freeze(obj) will make the parent object immutable, it's nested objects remain mutable
